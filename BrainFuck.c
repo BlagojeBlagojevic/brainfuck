@@ -61,12 +61,12 @@ void bf_interpreter() {
 				break;
 
 			case '.':
-				
+
 				putchar(DATA[DP]);
 				break;
 
 			case ',':
-				
+
 				scanf("%c",&DATA[DP]);
 				break;
 
@@ -118,9 +118,17 @@ void bf_interpreter() {
 	}
 
 
-int main() {
+int main(int argc,char *argv[]) {
+	if(argc == 1) {
+		printf("path to program <program.bas>\n");
+		return 0 ;
+
+		}
+		
+		
+	//printf("%s",argv[1]);
+	load_bf(argv[1]);
 	
-	load_bf("bf.bf");
 	bf_interpreter();
 	return 0;
 
